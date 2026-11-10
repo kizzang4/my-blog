@@ -1,0 +1,149 @@
+/* 마크다운 변환 결과(본문)의 타이포그래피 */
+.prose {
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.prose > * + * {
+  margin-top: 1.25em;
+}
+
+/* 제목 */
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.prose h1 { font-size: 1.875rem; }
+.prose h2 { font-size: 1.5rem; }
+.prose h3 { font-size: 1.25rem; }
+.prose h4 { font-size: 1.0625rem; }
+.prose h5 { font-size: 1rem; }
+.prose h6 { font-size: 0.9375rem; color: var(--text-muted); }
+
+.prose > * + :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 2.25em;
+}
+
+.prose > :is(h1, h2, h3, h4, h5, h6) + * {
+  margin-top: 0.75em;
+}
+
+/* 링크 */
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.prose a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* 인용 */
+.prose blockquote {
+  padding-left: 1em;
+  border-left: 3px solid var(--border);
+  color: var(--text-muted);
+}
+
+.prose blockquote > * + * {
+  margin-top: 0.75em;
+}
+
+/* 목록 */
+.prose :is(ul, ol) {
+  padding-left: 1.5em;
+}
+
+.prose li + li {
+  margin-top: 0.35em;
+}
+
+.prose li > :is(ul, ol) {
+  margin-top: 0.35em;
+}
+
+.prose li > p + p {
+  margin-top: 0.75em;
+}
+
+.prose .task-item {
+  margin-left: -1.25em;
+  list-style: none;
+}
+
+.prose .task-item input {
+  margin-right: 0.5em;
+  accent-color: var(--accent);
+}
+
+/* 코드 */
+.prose code {
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--code-bg);
+  overflow-wrap: anywhere;
+}
+
+.prose pre {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  tab-size: 2;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.prose pre code {
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  background: none;
+  overflow-wrap: normal;
+}
+
+/* 표 */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.prose :is(th, td) {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--bg-elevated);
+  font-weight: 600;
+}
+
+.prose [data-align='center'] { text-align: center; }
+.prose [data-align='right'] { text-align: right; }
+
+/* 이미지, 구분선 */
+.prose img {
+  border-radius: var(--radius);
+}
+
+.prose hr {
+  margin-block: 2.5em;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
